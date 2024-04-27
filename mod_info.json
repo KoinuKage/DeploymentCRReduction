@@ -1,0 +1,23 @@
+{
+    "id":"DeploymentCRReduction",
+	"name":"Deployment CR Reduction",
+	"author":"KoinuKage",
+    "utility":"true",
+	"version":"0.0.1",
+	"description":"Mod that reduces the Deployment CR by a multiplier specified by the player",
+    "gameVersion": "0.97a-RC6",
+  	"jars":["jars/DeploymentCRReduction.jar"],
+  	"modPlugin":"KoinuKage.DeploymentCRReduction",
+	  	"dependencies": [
+        {
+            "id": "lw_lazylib",
+            "name": "LazyLib",
+            "version": "2.8b"
+        },
+        {
+            "id": "MagicLib",
+            "name": "MagicLib",
+            "version": "1.4.1"
+        }
+    ]
+}
