@@ -1,5 +1,5 @@
 {
     "DeploymentCRReduction": {
-        "crReductionMultiplier" : 0 #decimal value, must be greater than 0, if it is lower than 0 it will be set to 0
+        "crReductionMultiplier" : 0.00
     }
 }
