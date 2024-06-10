@@ -1,6 +1,6 @@
 {
     "DeploymentCRReduction": {
-        "crReductionMultiplier" : 0.00,
+        "crReductionMultiplier" : 0.10,
         "suppliesRecoveryMultiplier" : 0.8
     }
 }

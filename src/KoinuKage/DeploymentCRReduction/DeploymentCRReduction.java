@@ -21,16 +21,26 @@ public class DeploymentCRReduction extends BaseModPlugin {
     public void ReduceDeploymentCR (ShipHullSpecAPI ship)
     {
         if (crReductionMultiplier < 0) crReductionMultiplier = 0;
-        if (crReductionMultiplier > 100) crReductionMultiplier = 100;
+        else if (crReductionMultiplier > 100) crReductionMultiplier = 100;
+
+        if (suppliesRecoveryMultiplier < 0) suppliesRecoveryMultiplier = 0;
+        else if (suppliesRecoveryMultiplier > 100) suppliesRecoveryMultiplier = 100;
+
         if (((ship.getCRToDeploy() * crReductionMultiplier) <= 1) && (crReductionMultiplier > 0))
         {
             ship.setCRToDeploy(1);
-            ship.setSuppliesToRecover(1);
+            ReduceSuppliesToRecover(ship);
         }
         else
         {
             ship.setCRToDeploy((float)floor(ship.getCRToDeploy() * crReductionMultiplier));
-            ship.setSuppliesToRecover((float)floor(ship.getSuppliesToRecover() * (crReductionMultiplier * suppliesRecoveryMultiplier)));
+            ReduceSuppliesToRecover(ship);
         }
+    }
+
+    public void ReduceSuppliesToRecover (ShipHullSpecAPI ship)
+    {
+        if (ship.getSuppliesToRecover() * crReductionMultiplier * suppliesRecoveryMultiplier < 1) ship.setSuppliesToRecover(1);
+        else ship.setSuppliesToRecover((float)floor(ship.getSuppliesToRecover() * (crReductionMultiplier * suppliesRecoveryMultiplier)));
     }
 }
