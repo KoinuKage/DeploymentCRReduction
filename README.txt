@@ -9,3 +9,6 @@ Be aware that CR is tied to ship price calculation, if you set it to 0 the ship 
 Manipulating the CR deployment cost caused a massive increase in supply recovery cost which could destroy the fleet in a matter of days (example, if you reduced the CR deployment cost from 13 to 1 then the supply cost went up by around the difference)
 Current calculation of supply recovery cost: Original cost multiplied by the CR Deployment multiplier multiplied by the supplies cost multipier (ex 12*0.1*0.8). I couldn't find a better way to resolve this issue right now.
 Added a safety calculation, if you set the crDeploymentMultiplier to anything bigger than 0, if the calculation of the cost would be a value between 0 and 1, the mod will default to value 1, added it due to game bugging out and taking your supplies forever
+
+Edit 10.06.2024
+As the value to deployment points cost is tied to recovery cost in supplies I added a safety measure that will set it to 1 in case the calculation detects that supplies to recover is lower than 1 it will force the value of 1. This is to prevent spamming smaller ships to a ridiculous number and possibly crashing the game as it would have to process all of the models.
